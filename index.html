@@ -24,7 +24,7 @@
 <meta name="author" content="Michael Briehl" />
 
 
-<meta name="date" content="2019-07-14" />
+<meta name="date" content="2019-07-16" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -136,14 +136,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="Workflow.html"><a href="Workflow.html#RDA"><i class="fa fa-check"></i>RDS</a></li>
 <li class="chapter" data-level="" data-path="Workflow.html"><a href="Workflow.html#Experiments"><i class="fa fa-check"></i>Experiments</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="CodeChunks.html"><a href="CodeChunks.html"><i class="fa fa-check"></i>Code Chunks</a></li>
+<li class="chapter" data-level="" data-path="IncludeCode.html"><a href="IncludeCode.html"><i class="fa fa-check"></i>Include Code</a><ul>
+<li class="chapter" data-level="" data-path="IncludeCode.html"><a href="IncludeCode.html#InlineCode"><i class="fa fa-check"></i>Inline Code</a></li>
+<li class="chapter" data-level="" data-path="IncludeCode.html"><a href="IncludeCode.html#CodeChunks"><i class="fa fa-check"></i>Code Chunks</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="Figures.html"><a href="Figures.html"><i class="fa fa-check"></i>Figures</a></li>
 <li class="chapter" data-level="" data-path="Tables.html"><a href="Tables.html"><i class="fa fa-check"></i>Tables</a></li>
-<li class="chapter" data-level="" data-path="TheYAMLheader.html"><a href="TheYAMLheader.html"><i class="fa fa-check"></i>The YAML header</a><ul>
-<li class="chapter" data-level="" data-path="TheYAMLheader.html"><a href="TheYAMLheader.html#Margin"><i class="fa fa-check"></i>Margin</a></li>
-<li class="chapter" data-level="" data-path="TheYAMLheader.html"><a href="TheYAMLheader.html#Fontsize"><i class="fa fa-check"></i>Fontsize</a></li>
-<li class="chapter" data-level="" data-path="TheYAMLheader.html"><a href="TheYAMLheader.html#Other"><i class="fa fa-check"></i>Other</a></li>
-</ul></li>
+<li class="chapter" data-level="" data-path="TheYAMLHeader.html"><a href="TheYAMLHeader.html"><i class="fa fa-check"></i>The YAML Header</a></li>
 <li class="chapter" data-level="" data-path="References.html"><a href="References.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -169,16 +168,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1 class="title">Why I wrote my Thesis in R Markdown</h1>
 <h2 class="subtitle"><em>(and why you should too)</em></h2>
 <p class="author"><em>Michael Briehl</em></p>
-<p class="date"><em>2019-07-14</em></p>
+<p class="date"><em>2019-07-16</em></p>
 </div>
 <div id="Introduction" class="section level1 unnumbered">
 <h1>Introduction</h1>
 <p>The start of writing a thesis is maybe the hardest part of the process. You are confronted with a difficult topic that you need to grasp, while simultaniously deciding which text editor you should use. With this little post, I hope to encourage you to try something different.</p>
 <p>Instead of using Word, which you shoud not, or <span class="math inline">\(\LaTeX\)</span>, which has a steep learning curve, I propose you use R Markdown for your thesis. R Markdown allows you to combine text and code in one file which makes a lot of things much easier. On top of that, the document that you will create is almost guaranteed to look professional and clean.</p>
 <p>To give you only one of the many advantages that R Markdwon has over its competitors: It is very easy to be consistent and you do not need to worry about updating statistical output in the text. You can just write R code in your text and if the data set is changed, the number in our final document is automatically updated through the R code.</p>
-<p>R Markdown is Marrdown language and therefore you can do things like <em>italic</em>, <strong>bold</strong>, or a different <code>font</code> with extreme ease.
+<p>R Markdown is an extension fo the Markdown language and therefore you can do things like <em>italic</em>, <strong>bold</strong>, or a different <code>font</code> with extreme ease.
 Furthermore your mathematical notation can be done without using an editor and looks pretty good: <span class="math inline">\(a^2+b^2 = c^2\)</span>.</p>
-<p>Now I am in now way, shape or form an expert on any of this and there are probably 42 better and more efficient ways of doing things. But this worked for me and if it makes your life marginally easier then I am more than glad.</p>
+<p>Now I am in now way, shape or form an expert on any of this and there are certainly better and more efficient ways of doing things. But this worked for me and if it makes your life marginally easier then I am more than glad.</p>
 <p>I have structured this little tutorial such that you can just pick a topic that you may be struggling with and see what I did.</p>
 
 </div>

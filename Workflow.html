@@ -24,7 +24,7 @@
 <meta name="author" content="Michael Briehl" />
 
 
-<meta name="date" content="2019-07-14" />
+<meta name="date" content="2019-07-16" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -32,7 +32,7 @@
   
   
 <link rel="prev" href="GetStarted.html">
-<link rel="next" href="CodeChunks.html">
+<link rel="next" href="IncludeCode.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -136,14 +136,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="Workflow.html"><a href="Workflow.html#RDA"><i class="fa fa-check"></i>RDS</a></li>
 <li class="chapter" data-level="" data-path="Workflow.html"><a href="Workflow.html#Experiments"><i class="fa fa-check"></i>Experiments</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="CodeChunks.html"><a href="CodeChunks.html"><i class="fa fa-check"></i>Code Chunks</a></li>
+<li class="chapter" data-level="" data-path="IncludeCode.html"><a href="IncludeCode.html"><i class="fa fa-check"></i>Include Code</a><ul>
+<li class="chapter" data-level="" data-path="IncludeCode.html"><a href="IncludeCode.html#InlineCode"><i class="fa fa-check"></i>Inline Code</a></li>
+<li class="chapter" data-level="" data-path="IncludeCode.html"><a href="IncludeCode.html#CodeChunks"><i class="fa fa-check"></i>Code Chunks</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="Figures.html"><a href="Figures.html"><i class="fa fa-check"></i>Figures</a></li>
 <li class="chapter" data-level="" data-path="Tables.html"><a href="Tables.html"><i class="fa fa-check"></i>Tables</a></li>
-<li class="chapter" data-level="" data-path="TheYAMLheader.html"><a href="TheYAMLheader.html"><i class="fa fa-check"></i>The YAML header</a><ul>
-<li class="chapter" data-level="" data-path="TheYAMLheader.html"><a href="TheYAMLheader.html#Margin"><i class="fa fa-check"></i>Margin</a></li>
-<li class="chapter" data-level="" data-path="TheYAMLheader.html"><a href="TheYAMLheader.html#Fontsize"><i class="fa fa-check"></i>Fontsize</a></li>
-<li class="chapter" data-level="" data-path="TheYAMLheader.html"><a href="TheYAMLheader.html#Other"><i class="fa fa-check"></i>Other</a></li>
-</ul></li>
+<li class="chapter" data-level="" data-path="TheYAMLHeader.html"><a href="TheYAMLHeader.html"><i class="fa fa-check"></i>The YAML Header</a></li>
 <li class="chapter" data-level="" data-path="References.html"><a href="References.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -168,14 +167,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="Workflow" class="section level1 unnumbered">
 <h1>Workflow</h1>
 <p>There are different approaches of working with R Markdown. Before you start writing your thesis, it is important that you decide on how much code you want to include in the .Rmd file.</p>
-<p>You can code <strong>everything</strong> in the R Markdown file, but I found that this may not be the best idea. As much as I like to keep things in one place, I would recommend you to do the ‘ugly’ part of coding in a normal R file, and just include light code in the R Markdown file. The reasoning is twofold. First, there is not much to be gained if you do the data preparation in Markdown, if you are not explicitly using it in your text. It will just extend the rendering time in the end. Secondly, I think the file gets really confusing, the bigger it gets.</p>
-<p>I did my data wrangling in a diffent file and saved the final data frame as a ‘feather’-file which is really fast.</p>
+<p>You can code <strong>everything</strong> in the R Markdown file, but I found that this may not be the best idea. As much as I like to keep things in one place, I would recommend you to do the ‘ugly’ part of coding in a normal R file, and just include light code in the R Markdown file. The reasoning is twofold. First, there is not much to be gained to do your data preparation in Markdown, if you are not explicitly using it in your text. It will just extend the rendering time in the end. Secondly, I think the file gets really confusing, the bigger it gets.</p>
+<p>I did my data wrangling in a different file and saved my final data frame as a ‘feather’-file which can be loaded really fast.</p>
 <div id="Feather" class="section level2 unnumbered">
 <h2>Feather</h2>
 <p>Installing the feather package can save you loads of time when dealing with big data sets. Instead of always reading in your data with read.csv or read.xls you just use read feather, which is so much faster. After the first time your data is in the global environment you should use:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(feather)
 <span class="kw">write_feather</span>(your_data, <span class="st">&quot;your_data.feather&quot;</span>)</code></pre>
-<p>Now your data is saved as a feather file and can be quickly read in your next R session with:</p>
+<p>Now your data is saved as a feather file and can be quickly read in your next R session or the .Rmd file with:</p>
 <pre class="sourceCode r"><code class="sourceCode r">your_data &lt;-<span class="st"> </span><span class="kw">read_feather</span>(<span class="st">&quot;your_data.feather&quot;</span>)</code></pre>
 <p>Feather is really great for dealing with big data frames, but cannot save R objects.</p>
 </div>
@@ -190,7 +189,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="Experiments" class="section level2 unnumbered">
 <h2>Experiments</h2>
-<p>As your R Markdown file gets bigger, the rendering time also extends. For your last format changes, it is probably helpfull if you generate a different file with which you can experiment. Especially for things like your cover or the ‘Einverständniserklärung’ you do not want to render the whole document. For all my direct <span class="math inline">\(LaTeX\)</span> stuff and tables I experimented in a different file.</p>
+<p>As your R Markdown file gets bigger, the rendering time also extends. For your last format changes, it is probably helpfull if you generate a different file with which you can experiment. Especially for things like tables, your cover or the ‘Einverständniserklärung’ you do not want to render the whole document. For all my <span class="math inline">\(LaTeX\)</span> stuff and tables I experimented in a different file.</p>
 
 </div>
 </div>
@@ -200,7 +199,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
         </div>
       </div>
 <a href="GetStarted.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="CodeChunks.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="IncludeCode.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

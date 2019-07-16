@@ -24,7 +24,7 @@
 <meta name="author" content="Michael Briehl" />
 
 
-<meta name="date" content="2019-07-14" />
+<meta name="date" content="2019-07-16" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -139,10 +139,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="CodeChunks.html"><a href="CodeChunks.html"><i class="fa fa-check"></i>Code Chunks</a></li>
 <li class="chapter" data-level="" data-path="Figures.html"><a href="Figures.html"><i class="fa fa-check"></i>Figures</a></li>
 <li class="chapter" data-level="" data-path="Tables.html"><a href="Tables.html"><i class="fa fa-check"></i>Tables</a></li>
-<li class="chapter" data-level="" data-path="TheYAMLheader.html"><a href="TheYAMLheader.html"><i class="fa fa-check"></i>The YAML header</a><ul>
-<li class="chapter" data-level="" data-path="TheYAMLheader.html"><a href="TheYAMLheader.html#Margin"><i class="fa fa-check"></i>Margin</a></li>
-<li class="chapter" data-level="" data-path="TheYAMLheader.html"><a href="TheYAMLheader.html#Fontsize"><i class="fa fa-check"></i>Fontsize</a></li>
-<li class="chapter" data-level="" data-path="TheYAMLheader.html"><a href="TheYAMLheader.html#Other"><i class="fa fa-check"></i>Other</a></li>
+<li class="chapter" data-level="" data-path="TheYAMLHeader.html"><a href="TheYAMLHeader.html"><i class="fa fa-check"></i>The YAML Header</a><ul>
+<li class="chapter" data-level="" data-path="TheYAMLHeader.html"><a href="TheYAMLHeader.html#Margin"><i class="fa fa-check"></i>Margin</a></li>
+<li class="chapter" data-level="" data-path="TheYAMLHeader.html"><a href="TheYAMLHeader.html#Fontsize"><i class="fa fa-check"></i>Fontsize</a></li>
+<li class="chapter" data-level="" data-path="TheYAMLHeader.html"><a href="TheYAMLHeader.html#Other"><i class="fa fa-check"></i>Other</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="References.html"><a href="References.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
@@ -168,11 +168,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="CodeChunks" class="section level1 unnumbered">
 <h1>Code Chunks</h1>
 <p>Implementing R Code in the Text is especially neat to be consistent. Maybe your data set changes and you want to implement the new summary in your file? With Word or <span class="math inline">\(\LaTeX\)</span> you would have to search for the numbers that changed manually, which is really prone to mistakes. In R Markdown there is non of that. You just insert your R code directly in your text like that:</p>
-<p>´r format(round(random.forest$MSE[500]))´.</p>
+<p><img src="Tutorial_3.png" /></p>
 <p>If your model changes, the number automatically changes</p>
-<p>If you want to present a code block that you used, or you have need to generally generate more code you can insert a code block</p>
+<p>If you want to present a code block that you used, or you have need to generally generate more code you can insert a code block with the keyboard shortcut ‘Strg’ + ‘Alt’ + ‘i’.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="dv">40</span><span class="op">+</span><span class="dv">2</span></code></pre>
 <pre><code>## [1] 42</code></pre>
+<p>In the example you can see the command ‘echo = TRUE’. If you set ‘echo = FALSE’, you will only see the result and not the code. You can set your default in the YAML header.</p>
 
 </div>
             </section>

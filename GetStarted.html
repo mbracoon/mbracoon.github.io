@@ -24,7 +24,7 @@
 <meta name="author" content="Michael Briehl" />
 
 
-<meta name="date" content="2019-07-14" />
+<meta name="date" content="2019-07-16" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -136,14 +136,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="Workflow.html"><a href="Workflow.html#RDA"><i class="fa fa-check"></i>RDS</a></li>
 <li class="chapter" data-level="" data-path="Workflow.html"><a href="Workflow.html#Experiments"><i class="fa fa-check"></i>Experiments</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="CodeChunks.html"><a href="CodeChunks.html"><i class="fa fa-check"></i>Code Chunks</a></li>
+<li class="chapter" data-level="" data-path="IncludeCode.html"><a href="IncludeCode.html"><i class="fa fa-check"></i>Include Code</a><ul>
+<li class="chapter" data-level="" data-path="IncludeCode.html"><a href="IncludeCode.html#InlineCode"><i class="fa fa-check"></i>Inline Code</a></li>
+<li class="chapter" data-level="" data-path="IncludeCode.html"><a href="IncludeCode.html#CodeChunks"><i class="fa fa-check"></i>Code Chunks</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="Figures.html"><a href="Figures.html"><i class="fa fa-check"></i>Figures</a></li>
 <li class="chapter" data-level="" data-path="Tables.html"><a href="Tables.html"><i class="fa fa-check"></i>Tables</a></li>
-<li class="chapter" data-level="" data-path="TheYAMLheader.html"><a href="TheYAMLheader.html"><i class="fa fa-check"></i>The YAML header</a><ul>
-<li class="chapter" data-level="" data-path="TheYAMLheader.html"><a href="TheYAMLheader.html#Margin"><i class="fa fa-check"></i>Margin</a></li>
-<li class="chapter" data-level="" data-path="TheYAMLheader.html"><a href="TheYAMLheader.html#Fontsize"><i class="fa fa-check"></i>Fontsize</a></li>
-<li class="chapter" data-level="" data-path="TheYAMLheader.html"><a href="TheYAMLheader.html#Other"><i class="fa fa-check"></i>Other</a></li>
-</ul></li>
+<li class="chapter" data-level="" data-path="TheYAMLHeader.html"><a href="TheYAMLHeader.html"><i class="fa fa-check"></i>The YAML Header</a></li>
 <li class="chapter" data-level="" data-path="References.html"><a href="References.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -171,7 +170,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="st">&quot;rmarkdown&quot;</span>)</code></pre>
 <p>Now you can go on File -&gt; New File -&gt; R Markdown to create your first file.</p>
 <p><img src="Tutorial_1.png" /></p>
-<p>Every file starts with a example text, which you can already render into a .html document. But your thesis is probably required to be in the .pdf format, therefore you need to install a <span class="math inline">\(\LaTeX\)</span> distribution. If you are on a Windows machine, I would recommend you MiKTex, for Mac or Linux you can use TeX Live or MacTex. Keep in mind, you do not have to be familiar with <span class="math inline">\(\LaTeX\)</span>, it is just needed for the conversion into .pdf.</p>
+<p>Every file starts with a example text, which you can already render into a .html document. But your thesis is probably required to be in the .pdf format, therefore you need to install a <span class="math inline">\(\LaTeX\)</span> distribution. If you are on a Windows machine, I would recommend you MiKTeX, for Mac or Linux you can use TeX Live or MacTex. Keep in mind, you do not have to be familiar with <span class="math inline">\(\LaTeX\)</span>, it is just needed for the conversion into .pdf.
+What you also want to do, is to change the settings of your <span class="math inline">\(\LaTeX\)</span> distribution, such that packages which you may need in the R Markdown file are automatically downloaded. For MiKTeX you just go to ‘Settings’ and check the box ‘Always install missing packages on-the-fly’</p>
 <p>For rendering your file you just have to press the <strong>Knit</strong> button and voilà, there is your first document.</p>
 
 </div>

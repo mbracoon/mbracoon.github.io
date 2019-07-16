@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Figures | Why I wrote my Thesis in R Markdown</title>
+  <title>Include Code | Why I wrote my Thesis in R Markdown</title>
   <meta name="description" content="This is a short post about why R Markdown rules" />
   <meta name="generator" content="bookdown 0.11 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Figures | Why I wrote my Thesis in R Markdown" />
+  <meta property="og:title" content="Include Code | Why I wrote my Thesis in R Markdown" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Figures | Why I wrote my Thesis in R Markdown" />
+  <meta name="twitter:title" content="Include Code | Why I wrote my Thesis in R Markdown" />
   
   <meta name="twitter:description" content="This is a short post about why R Markdown rules" />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="IncludeCode.html">
-<link rel="next" href="Tables.html">
+<link rel="prev" href="Workflow.html">
+<link rel="next" href="Figures.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -164,18 +164,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="Figures" class="section level1 unnumbered">
-<h1>Figures</h1>
-<p>Figures are also a highlight of R Markdown. Plots are a fantastic way of communicating data and I would definetly encourage you to learn the basics of <code>ggplot</code>, if you have not already. You can now just implement a ggplot in the code chunk. For example you could make a Boxplot like this:</p>
+<div id="IncludeCode" class="section level1 unnumbered">
+<h1>Include Code</h1>
+<div id="InlineCode" class="section level2 unnumbered">
+<h2>Inline Code</h2>
+<p>Implementing R Code in the Text is especially neat to be consistent. Maybe your data set changes and you want to implement the new summary in your file? With Word or <span class="math inline">\(\LaTeX\)</span> you would have to search for the numbers that changed manually, which is really prone to mistakes. In R Markdown there is non of that. You just insert your R code directly in your text like that:</p>
+<p><img src="Tutorial_3.png" /></p>
+<p>If your model changes, the number automatically changes</p>
+</div>
+<div id="CodeChunks" class="section level2 unnumbered">
+<h2>Code Chunks</h2>
+<p>If you want to present a code block that you used, or you have to generate a plot, you can insert a code block with the keyboard shortcut ‘Strg’ + ‘Alt’ + ‘i’.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="dv">40</span><span class="op">+</span><span class="dv">2</span></code></pre>
+<pre><code>## [1] 42</code></pre>
+<p>In the example you can see the command ‘echo = TRUE’. If you set ‘echo = FALSE’, you will only see the result and not the code. You can set your default under the YAML header.</p>
 
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="IncludeCode.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="Tables.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="Workflow.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="Figures.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

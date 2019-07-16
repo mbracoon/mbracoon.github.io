@@ -166,7 +166,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="Figures" class="section level1 unnumbered">
 <h1>Figures</h1>
-<p>Figures are also a highlight of R Markdown. Plots are a fantastic way of communicating data and I would definetly encourage you to learn the basics of <code>ggplot</code>, if you have not already. You can now just implement a ggplot in the code chunk. For example you could make a Boxplot like this:</p>
+<p>Figures are also a highlight of R Markdown. Plots are a fantastic way of communicating data and I would definetly encourage you to learn the basics of <code>ggplot</code>, if you have not already. You can now just implement a ggplot in the code chunk.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(ggplot2) <span class="co"># For ggplot</span>
+<span class="kw">library</span>(gridExtra) <span class="co"># For arrangement of two figures in one row</span>
+
+f1 &lt;-<span class="st"> </span><span class="kw">ggplot</span>(output, <span class="kw">aes</span>(<span class="dt">x =</span> sml.rsq)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_histogram</span>(<span class="dt">binwidth =</span> <span class="fl">0.01</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_vline</span>(<span class="dt">xintercept =</span> final.model<span class="op">$</span>rsq[<span class="dv">200</span>], <span class="dt">color =</span> <span class="st">&quot;orange2&quot;</span>, <span class="dt">linetype =</span> <span class="dv">2</span>)<span class="op">+</span>
+<span class="st">  </span><span class="kw">xlab</span>(<span class="kw">expression</span>(R<span class="op">^</span>{<span class="dv">2</span>})) <span class="op">+</span>
+<span class="st">  </span><span class="kw">ylab</span>(<span class="st">&quot;Number of samples&quot;</span>)
+
+f2 &lt;-<span class="st"> </span><span class="kw">ggplot</span>(output, <span class="kw">aes</span>(<span class="dt">x =</span> sml.mse)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_histogram</span>(<span class="dt">binwidth =</span> <span class="fl">0.08</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_vline</span>(<span class="dt">xintercept =</span> final.model<span class="op">$</span>mse[<span class="dv">200</span>], <span class="dt">color =</span> <span class="st">&quot;cornflowerblue&quot;</span>, <span class="dt">linetype =</span> <span class="dv">2</span>)<span class="op">+</span>
+<span class="st">  </span><span class="kw">xlab</span>(<span class="st">&quot;MSE&quot;</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">ylab</span>(<span class="st">&quot;Number of samples&quot;</span>)
+
+<span class="kw">grid.arrange</span>(f1, f2, <span class="dt">ncol =</span> <span class="dv">2</span>)</code></pre>
+<div class="figure"><span id="fig:unnamed-chunk-10"></span>
+<img src="Why_I_wrote_my_thesis_in_R_Markdown_files/figure-html/unnamed-chunk-10-1.png" alt="Non parametric density functions for $R^2$ and MSE with 1,000 Monte Carlo iterations. \label{name}" width="672" />
+<p class="caption">
+Figure 1: Non parametric density functions for <span class="math inline">\(R^2\)</span> and MSE with 1,000 Monte Carlo iterations. 
+</p>
+</div>
+<p>For captions and labeling figures, I used {r, fig.height=3, fig.cap = “Your text here. \label{name}”} on top of the code chunk. The plot then can be referenced.</p>
 
 </div>
             </section>

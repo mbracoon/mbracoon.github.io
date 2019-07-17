@@ -24,7 +24,7 @@
 <meta name="author" content="Michael Briehl" />
 
 
-<meta name="date" content="2019-07-16" />
+<meta name="date" content="2019-07-17" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -47,6 +47,7 @@
 
 
 
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
 
 
 <style type="text/css">
@@ -141,7 +142,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="IncludeCode.html"><a href="IncludeCode.html#CodeChunks"><i class="fa fa-check"></i>Code Chunks</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="Figures.html"><a href="Figures.html"><i class="fa fa-check"></i>Figures</a></li>
-<li class="chapter" data-level="" data-path="Tables.html"><a href="Tables.html"><i class="fa fa-check"></i>Tables</a></li>
+<li class="chapter" data-level="" data-path="Tables.html"><a href="Tables.html"><i class="fa fa-check"></i>Tables</a><ul>
+<li class="chapter" data-level="" data-path="Tables.html"><a href="Tables.html#Kable"><i class="fa fa-check"></i>Kable</a></li>
+<li class="chapter" data-level="" data-path="Tables.html"><a href="Tables.html#Pander"><i class="fa fa-check"></i>Pander</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="TheYAMLHeader.html"><a href="TheYAMLHeader.html"><i class="fa fa-check"></i>The YAML Header</a></li>
 <li class="chapter" data-level="" data-path="References.html"><a href="References.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
@@ -166,12 +170,120 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="Tables" class="section level1 unnumbered">
 <h1>Tables</h1>
-<p>Tables are used to present a large amount of data in a small form factor. Especially for summary statistics and variable descriptions they are a must. There are different ways of making tables and I want to present you two.</p>
-<ul>
-<li>The first involves the R package <code>kable</code> and <code>kableextra</code>. With kable, you can create beautiful tables for summary statistics. It has some similarity to ggplot, because you do not just type in the variables and values, instead you build a dataframe directly from your data.</li>
-</ul>
-<p>For example…</p>
+<p>Tables are used to present a large amount of data in a small form factor. Especially for summary statistics and variable descriptions they are usefull. There are different ways of making tables in R Markdown and I want to present you two.</p>
+<div id="Kable" class="section level2 unnumbered">
+<h2>Kable</h2>
+<p>The first involves the R package <code>kableExtra</code> and the function <strong>kable</strong> from <code>knitr</code>. With kable, you can create beautiful tables for summary statistics. The idea is to create a data frame which kable then can transform into a table. After creating the data frame with all the variables for which summary statistics are required, you can use <strong>lapply</strong> to return the desired statistics.</p>
+<pre class="sourceCode r"><code class="sourceCode r">t_mean &lt;-<span class="st"> </span><span class="kw">lapply</span>(data, mean, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)
+t_med &lt;-<span class="st"> </span><span class="kw">lapply</span>(data, median, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)
+t_min &lt;-<span class="st"> </span><span class="kw">lapply</span>(data, min, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)
+t_max &lt;-<span class="st"> </span><span class="kw">lapply</span>(data, max, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)</code></pre>
+<p>Then you want to create the table:</p>
+<pre class="sourceCode r"><code class="sourceCode r">table &lt;-<span class="st"> </span><span class="kw">cbind</span>(<span class="dt">Mean =</span> t_mean, <span class="dt">Median =</span> t_med, <span class="dt">Min =</span> t_min, <span class="dt">Max =</span> t_max)</code></pre>
+<p>Which then can be used for kable:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(kableExtra)
+<span class="kw">kable</span>(table, <span class="dt">format =</span> <span class="st">&quot;html&quot;</span>, <span class="dt">caption =</span> <span class="st">&quot;</span><span class="ch">\\</span><span class="st">label{table1} The format for the .pdf file is &#39;latex&#39; instead of &#39;html&#39;.&quot;</span>,
+      <span class="dt">booktab =</span> <span class="ot">TRUE</span>) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span>kableExtra<span class="op">::</span><span class="kw">kable_styling</span>(<span class="dt">latex_options =</span> <span class="st">&quot;hold_position&quot;</span>)</code></pre>
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:unnamed-chunk-14">Table 1: </span> The format for the .pdf file is ‘latex’ instead of ‘html’.
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:left;">
+Mean
+</th>
+<th style="text-align:left;">
+Median
+</th>
+<th style="text-align:left;">
+Min
+</th>
+<th style="text-align:left;">
+Max
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Sepal.Length
+</td>
+<td style="text-align:left;">
+5.84333333333333
+</td>
+<td style="text-align:left;">
+5.8
+</td>
+<td style="text-align:left;">
+4.3
+</td>
+<td style="text-align:left;">
+7.9
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Sepal.Width
+</td>
+<td style="text-align:left;">
+3.05733333333333
+</td>
+<td style="text-align:left;">
+3
+</td>
+<td style="text-align:left;">
+2
+</td>
+<td style="text-align:left;">
+4.4
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Petal.Length
+</td>
+<td style="text-align:left;">
+3.758
+</td>
+<td style="text-align:left;">
+4.35
+</td>
+<td style="text-align:left;">
+1
+</td>
+<td style="text-align:left;">
+6.9
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Petal.Width
+</td>
+<td style="text-align:left;">
+1.19933333333333
+</td>
+<td style="text-align:left;">
+1.3
+</td>
+<td style="text-align:left;">
+0.1
+</td>
+<td style="text-align:left;">
+2.5
+</td>
+</tr>
+</tbody>
+</table>
+<p>The options of <code>kableExtra</code> are limitless and with the pipe operator ‘%&gt;%’ you can just keep on adding more specifications which can be found at <a href="https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html">kableExtra</a>.</p>
+</div>
+<div id="Pander" class="section level2 unnumbered">
+<h2>Pander</h2>
 
+</div>
 </div>
             </section>
 
@@ -216,7 +328,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["Why I wrote my thesis in R Markdown.pdf", "Why I wrote my thesis in R Markdown.epub"],
+"download": ["RMarkdown.pdf", "RMarkdown.epub"],
 "toc": {
 "collapse": "subsection"
 }

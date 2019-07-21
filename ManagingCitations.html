@@ -142,7 +142,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="GetStarted.html"><a href="GetStarted.html"><i class="fa fa-check"></i>Get Started</a></li>
 <li class="chapter" data-level="" data-path="Workflow.html"><a href="Workflow.html"><i class="fa fa-check"></i>Workflow</a><ul>
 <li class="chapter" data-level="" data-path="Workflow.html"><a href="Workflow.html#Feather"><i class="fa fa-check"></i>Feather</a></li>
-<li class="chapter" data-level="" data-path="Workflow.html"><a href="Workflow.html#RDA"><i class="fa fa-check"></i>RDS</a></li>
+<li class="chapter" data-level="" data-path="Workflow.html"><a href="Workflow.html#RDS"><i class="fa fa-check"></i>RDS</a></li>
 <li class="chapter" data-level="" data-path="Workflow.html"><a href="Workflow.html#Experiments"><i class="fa fa-check"></i>Experiments</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="Markdown.html"><a href="Markdown.html"><i class="fa fa-check"></i>Markdown</a></li>
@@ -182,7 +182,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1>Managing Citations</h1>
 <p>Instead of manually inserting citations, you can use a bibtex library. For me it was the first time using bibtex and in the end I think it was really worth wile. The idea is to store your references in a different file with a specific format, such that R Markdown (Pandoc to be more specific) can access it and automatically insert it in the references. In the .Rmd file you wont find any direct citations like <span class="citation">(Hastie, Tibshirani, and Friedman <a href="#ref-Hastie09">2009</a>)</span>, just the command <code>[@Hastie09]</code>.
 This specific reference could be stored in your bibtex file like this:</p>
-<pre><code>`@book`{Hastie09,
+<pre><code>@book{Hastie09,
 
             author = &quot;Hastie, Trevor and Tibshirani, Robert and Friedman, Jerome&quot;,
       

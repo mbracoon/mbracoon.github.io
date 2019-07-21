@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>The YAML Header | Why I wrote my Thesis in R Markdown</title>
+  <title>Markdown | Why I wrote my Thesis in R Markdown</title>
   <meta name="description" content="This is a short post about why R Markdown rules" />
   <meta name="generator" content="bookdown 0.11 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="The YAML Header | Why I wrote my Thesis in R Markdown" />
+  <meta property="og:title" content="Markdown | Why I wrote my Thesis in R Markdown" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="The YAML Header | Why I wrote my Thesis in R Markdown" />
+  <meta name="twitter:title" content="Markdown | Why I wrote my Thesis in R Markdown" />
   
   <meta name="twitter:description" content="This is a short post about why R Markdown rules" />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="Tables.html">
-<link rel="next" href="References.html">
+<link rel="prev" href="Workflow.html">
+<link rel="next" href="IncludeCode.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -169,11 +169,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="TheYAMLHeader" class="section level1 unnumbered">
-<h1>The YAML Header</h1>
-<p>The YAML header is the brain of your thesis. Parallel to <span class="math inline">\(\LaTeX\)</span>, you can just change one number in this header and your whole document changes.</p>
-<p><img src="Tutorial_4.png" /></p>
-<p>The YAML header of my thesis starts with the page set up which is is achieved trough ‘geometry:’. You probably have some specifications for margins that you can just type in. Same with ‘fontsize:’. Note that this only works with .pdf and you have to allow your <span class="math inline">\(\LaTeX\)</span> distibution to download packages on the go.</p>
+<div id="Markdown" class="section level1 unnumbered">
+<h1>Markdown</h1>
+<p>Since I used the Markdown language for the first time, I do all my notes in this particular style, because I think it is very easy and it just makes sence.</p>
+<p>The structure of your thesis may look like this:</p>
+<p><code># Introduction</code></p>
+<p><code># First Chapter</code></p>
+<p><code>## First Sub Chapter</code></p>
+<p><code>## Second Sub Chapter</code></p>
+<p><code># Second Chapter</code></p>
+<p><code># Third Chapter</code></p>
+<p><code># Discussion</code></p>
+<p>The command <code>\tableofcontents</code> builds the table of contents out of your headers and sub headers and looks really clean. Furthermore you can include number_sections = true in the YAML header to number the sections of your thesis, which is a good idea.</p>
+<p>Besides the headers Markdown also handles the format of text.</p>
+<p><code>*italic*</code>
+<code>**bold**</code>
+<code>different font</code></p>
+<p>If you have many variables, the readability of your thesis may profit if you to make them italic or in a different font. My variables had indices, therefore I could not use pure Markdown, but a <span class="math inline">\(\LaTeX\)</span> command, which may look like this: <code>$variable_{it}$</code> and results in <span class="math inline">\(variable_{it}\)</span>.</p>
 
 </div>
             </section>
@@ -181,8 +193,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="Tables.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="References.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="Workflow.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="IncludeCode.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

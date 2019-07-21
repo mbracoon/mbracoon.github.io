@@ -24,7 +24,7 @@
 <meta name="author" content="Michael Briehl" />
 
 
-<meta name="date" content="2019-07-16" />
+<meta name="date" content="2019-07-21" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -47,6 +47,7 @@
 
 
 
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
 
 
 <style type="text/css">
@@ -136,12 +137,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="Workflow.html"><a href="Workflow.html#RDA"><i class="fa fa-check"></i>RDS</a></li>
 <li class="chapter" data-level="" data-path="Workflow.html"><a href="Workflow.html#Experiments"><i class="fa fa-check"></i>Experiments</a></li>
 </ul></li>
+<li class="chapter" data-level="" data-path="Markdown.html"><a href="Markdown.html"><i class="fa fa-check"></i>Markdown</a></li>
 <li class="chapter" data-level="" data-path="IncludeCode.html"><a href="IncludeCode.html"><i class="fa fa-check"></i>Include Code</a><ul>
 <li class="chapter" data-level="" data-path="IncludeCode.html"><a href="IncludeCode.html#InlineCode"><i class="fa fa-check"></i>Inline Code</a></li>
 <li class="chapter" data-level="" data-path="IncludeCode.html"><a href="IncludeCode.html#CodeChunks"><i class="fa fa-check"></i>Code Chunks</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="Figures.html"><a href="Figures.html"><i class="fa fa-check"></i>Figures</a></li>
-<li class="chapter" data-level="" data-path="Tables.html"><a href="Tables.html"><i class="fa fa-check"></i>Tables</a></li>
+<li class="chapter" data-level="" data-path="Tables.html"><a href="Tables.html"><i class="fa fa-check"></i>Tables</a><ul>
+<li class="chapter" data-level="" data-path="Tables.html"><a href="Tables.html#Kable"><i class="fa fa-check"></i>Kable</a></li>
+<li class="chapter" data-level="" data-path="Tables.html"><a href="Tables.html#Pander"><i class="fa fa-check"></i>Pander</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="TheYAMLHeader.html"><a href="TheYAMLHeader.html"><i class="fa fa-check"></i>The YAML Header</a></li>
 <li class="chapter" data-level="" data-path="References.html"><a href="References.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
@@ -166,6 +171,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="References" class="section level1 unnumbered">
 <h1>References</h1>
+<p>Instead of manually inserting citations, you can use a bibtex library. For me it was the first time using bibtex and in the end I think it was really worth wile. The idea is to store your references in a different file with a specific format, such that R Markdown (Pandoc to be more specific) can access it and automatically insert it in the references. In the .Rmd file you wont find any direct citations like (Hastie et al., 2009) but something like <code>[@Hastie09]</code>.
+This specific reference could be stored in your bibtex file like this:</p>
+<p><code>@book</code>{Hastie09,</p>
+<p>author = “Hastie, Trevor and Tibshirani, Robert and Friedman, Jerome”,</p>
+<pre><code>     title = &quot;The {E}lements of {S}tatistical {L}earning&quot;,
+        
+        subtitle = &quot;Data {M}ining, {I}nference, and {P}rediction&quot;,
+        
+        publisher = &quot;Springer Science+Business Media&quot;,
+        
+        year = &quot;2009&quot;</code></pre>
+<p>}</p>
+<p>The reference is then automatically put in the references section at the end of the thesis. However, what the citations look like in the text and in the references is not dependent on the bibtex file.
+Besides your bibtex file, you also need to include a citation style language (csl) file in the YAML header. I downloaded the 6th edition apa csl from github, which you can find <a href="https://github.com/citation-style-language/styles/blob/master/apa.csl">here</a>.</p>
+<p>This particular .csl will only capitalize the first word of every sentence in articles and books, however I had the requirement to capitalize every noun it the title of books, so I used curly brackets for the first letters.</p>
+<p>The websites from which you download papers normally already provide bibtex files which you can also download and insert in your bibtex file.</p>
 
 </div>
             </section>
@@ -211,7 +232,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["Why I wrote my thesis in R Markdown.pdf", "Why I wrote my thesis in R Markdown.epub"],
+"download": ["RMarkdown.pdf", "RMarkdown.epub"],
 "toc": {
 "collapse": "subsection"
 }

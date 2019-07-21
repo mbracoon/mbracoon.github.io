@@ -142,7 +142,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="GetStarted.html"><a href="GetStarted.html"><i class="fa fa-check"></i>Get Started</a></li>
 <li class="chapter" data-level="" data-path="Workflow.html"><a href="Workflow.html"><i class="fa fa-check"></i>Workflow</a><ul>
 <li class="chapter" data-level="" data-path="Workflow.html"><a href="Workflow.html#Feather"><i class="fa fa-check"></i>Feather</a></li>
-<li class="chapter" data-level="" data-path="Workflow.html"><a href="Workflow.html#RDA"><i class="fa fa-check"></i>RDS</a></li>
+<li class="chapter" data-level="" data-path="Workflow.html"><a href="Workflow.html#RDS"><i class="fa fa-check"></i>RDS</a></li>
 <li class="chapter" data-level="" data-path="Workflow.html"><a href="Workflow.html#Experiments"><i class="fa fa-check"></i>Experiments</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="Markdown.html"><a href="Markdown.html"><i class="fa fa-check"></i>Markdown</a></li>
@@ -185,12 +185,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>I worked with three files in total:</p>
 <ul>
 <li><p>The first file (1) was a normal R file for preparing the data set, where I checked the structure of the data and changed the format of variables. All my screens that I had to take in order of the random forest model to work took place here. In the end I saved this final data frame as a feather file, which is described below.</p></li>
-<li><p>The second file (2), also a R file, was used for the model estimation and validation. I imported the feather data frame from (1) and ran the models. Every model and its validation were saved as an RDS file, also described below.</p></li>
+<li><p>The second file (2), also a R file, was used for the model estimation and validation. I imported the feather data frame from (1) and ran the models. Every model and its validation were saved as a RDS file, also described below.</p></li>
 <li><p>The third and final file was the R Markdown .Rmd file (3). Here I wrote all my text and imported the files which were saved in (1) and (2). The first chapter of my thesis was an overview over the data set, therefore I first imported the prepared file from (1) and did some summary statistics with kable described in Chapter Tables. Furthermore I did some boxplots of important variables described in Chapter Figures. For my results I imported the files from (2) and then plotted the residuals and other results directly in code chunks.</p></li>
 </ul>
 <div class="figure"><span id="fig:unnamed-chunk-2"></span>
-<div id="htmlwidget-3aa30f3bb9ef66ef72d4" style="width:672px;height:192px;" class="DiagrammeR html-widget"></div>
-<script type="application/json" data-for="htmlwidget-3aa30f3bb9ef66ef72d4">{"x":{"diagram":"\ngraph LR\n\nA[Data Wrangling] -- Feather<br>File --> C{.Rmd File}\nA -- Feather<br>File --> B[Model Estimation]\nB -- .RDA<br>Files--> C\n\n\nstyle C fill:#6495ED,stroke:#333,stroke-width:1px;\n  \n"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-f53ed8fe547aeaf4b196" style="width:672px;height:192px;" class="DiagrammeR html-widget"></div>
+<script type="application/json" data-for="htmlwidget-f53ed8fe547aeaf4b196">{"x":{"diagram":"\ngraph LR\n\nA[Data Wrangling] -- Feather<br>File --> C{.Rmd File}\nA -- Feather<br>File --> B[Model Estimation]\nB -- .RDS<br>Files--> C\n\n\nstyle C fill:#6495ED,stroke:#333,stroke-width:1px;\n  \n"},"evals":[],"jsHooks":[]}</script>
 <p class="caption">
 Figure 1: Flowchart for the three different files
 </p>
@@ -204,7 +204,7 @@ Figure 1: Flowchart for the three different files
 <pre class="sourceCode r"><code class="sourceCode r">your_data &lt;-<span class="st"> </span><span class="kw">read_feather</span>(<span class="st">&quot;your_data.feather&quot;</span>)</code></pre>
 <p>Feather is really great for dealing with big data frames, but cannot save R objects.</p>
 </div>
-<div id="RDA" class="section level2 unnumbered">
+<div id="RDS" class="section level2 unnumbered">
 <h2>RDS</h2>
 <p>RDS is a way of caching R objects or data frames. Although you should use feather when dealing with data frames, because it is quicker, you need RDS for saving R objects. I ran pretty big random forest models for my thesis and instead of doing that every time, I saved the output:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">saveRDS</span>(big_object, <span class="st">&quot;big_object.rds&quot;</span>)</code></pre>

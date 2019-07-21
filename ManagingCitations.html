@@ -47,6 +47,14 @@
 
 
 
+<script src="libs/htmlwidgets-1.3/htmlwidgets.js"></script>
+<script src="libs/d3-3.3.8/d3.min.js"></script>
+<script src="libs/dagre-0.4.0/dagre-d3.min.js"></script>
+<link href="libs/mermaid-0.3.0/dist/mermaid.css" rel="stylesheet" />
+<script src="libs/mermaid-0.3.0/dist/mermaid.slim.min.js"></script>
+<link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
+<script src="libs/chromatography-0.1/chromatography.js"></script>
+<script src="libs/DiagrammeR-binding-1.0.1/DiagrammeR.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 
 
@@ -174,20 +182,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1>Managing Citations</h1>
 <p>Instead of manually inserting citations, you can use a bibtex library. For me it was the first time using bibtex and in the end I think it was really worth wile. The idea is to store your references in a different file with a specific format, such that R Markdown (Pandoc to be more specific) can access it and automatically insert it in the references. In the .Rmd file you wont find any direct citations like <span class="citation">(Hastie, Tibshirani, and Friedman <a href="#ref-Hastie09">2009</a>)</span>, just the command <code>[@Hastie09]</code>.
 This specific reference could be stored in your bibtex file like this:</p>
-<p><code>@book</code>{Hastie09,</p>
-<pre><code> author = &quot;Hastie, Trevor and Tibshirani, Robert and Friedman, Jerome&quot;,
-  
-        title = &quot;The {E}lements of {S}tatistical {L}earning&quot;,
-        
-        subtitle = &quot;Data {M}ining, {I}nference, and {P}rediction&quot;,
-        
-        publisher = &quot;Springer Science+Business Media&quot;,
-        
-        year = &quot;2009&quot;</code></pre>
-<p>}</p>
+<pre><code>`@book`{Hastie09,
+
+            author = &quot;Hastie, Trevor and Tibshirani, Robert and Friedman, Jerome&quot;,
+      
+            title = &quot;The {E}lements of {S}tatistical {L}earning&quot;,
+            
+            subtitle = &quot;Data {M}ining, {I}nference, and {P}rediction&quot;,
+            
+            publisher = &quot;Springer Science+Business Media&quot;,
+            
+            year = &quot;2009&quot;
+}</code></pre>
 <p>The reference is then automatically put in the references section at the end of the thesis. However, what the citations looks like in the text and in the references is not dependent on the bibtex file.
 Besides your bibtex file, you also need to include a citation style language (csl) file in the YAML header. I downloaded the 6th edition apa csl from github, which you can find <a href="https://github.com/citation-style-language/styles/blob/master/apa.csl">here</a>.</p>
-<p>This particular .csl will only capitalize the first word of every sentence in articles and books, however I had the requirement to capitalize every noun it the title of books, so I used curly brackets for the first letters.</p>
+<p>This particular .csl will only capitalize the first word of every sentence in articles and books, however I had the requirement to capitalize every noun in the title of books, so I used curly brackets for the first letters.</p>
 <p>The websites from which you download papers normally already provide bibtex files which you can also download and insert in your bibtex file.</p>
 </div>
 <h3>References</h3>

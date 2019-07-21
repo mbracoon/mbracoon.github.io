@@ -47,6 +47,14 @@
 
 
 
+<script src="libs/htmlwidgets-1.3/htmlwidgets.js"></script>
+<script src="libs/d3-3.3.8/d3.min.js"></script>
+<script src="libs/dagre-0.4.0/dagre-d3.min.js"></script>
+<link href="libs/mermaid-0.3.0/dist/mermaid.css" rel="stylesheet" />
+<script src="libs/mermaid-0.3.0/dist/mermaid.slim.min.js"></script>
+<link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
+<script src="libs/chromatography-0.1/chromatography.js"></script>
+<script src="libs/DiagrammeR-binding-1.0.1/DiagrammeR.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 
 
@@ -180,7 +188,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>The second file (2), also a R file, was used for the model estimation and validation. I imported the feather data frame from (1) and ran the models. Every model and its validation were saved as an RDS file, also described below.</p></li>
 <li><p>The third and final file was the R Markdown .Rmd file (3). Here I wrote all my text and imported the files which were saved in (1) and (2). The first chapter of my thesis was an overview over the data set, therefore I first imported the prepared file from (1) and did some summary statistics with kable described in Chapter Tables. Furthermore I did some boxplots of important variables described in Chapter Figures. For my results I imported the files from (2) and then plotted the residuals and other results directly in code chunks.</p></li>
 </ul>
-<p>[Insert flowchart]</p>
+<div class="figure"><span id="fig:unnamed-chunk-2"></span>
+<div id="htmlwidget-3aa30f3bb9ef66ef72d4" style="width:672px;height:192px;" class="DiagrammeR html-widget"></div>
+<script type="application/json" data-for="htmlwidget-3aa30f3bb9ef66ef72d4">{"x":{"diagram":"\ngraph LR\n\nA[Data Wrangling] -- Feather<br>File --> C{.Rmd File}\nA -- Feather<br>File --> B[Model Estimation]\nB -- .RDA<br>Files--> C\n\n\nstyle C fill:#6495ED,stroke:#333,stroke-width:1px;\n  \n"},"evals":[],"jsHooks":[]}</script>
+<p class="caption">
+Figure 1: Flowchart for the three different files
+</p>
+</div>
 <div id="Feather" class="section level2 unnumbered">
 <h2>Feather</h2>
 <p>Installing the feather package can save you loads of time when dealing with big data sets. Instead of always reading in your data with read.csv or read.xls you just use read feather, which is so much faster. After the first time your data is in the global environment you should use:</p>

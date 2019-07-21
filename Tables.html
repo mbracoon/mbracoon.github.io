@@ -47,6 +47,14 @@
 
 
 
+<script src="libs/htmlwidgets-1.3/htmlwidgets.js"></script>
+<script src="libs/d3-3.3.8/d3.min.js"></script>
+<script src="libs/dagre-0.4.0/dagre-d3.min.js"></script>
+<link href="libs/mermaid-0.3.0/dist/mermaid.css" rel="stylesheet" />
+<script src="libs/mermaid-0.3.0/dist/mermaid.slim.min.js"></script>
+<link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
+<script src="libs/chromatography-0.1/chromatography.js"></script>
+<script src="libs/DiagrammeR-binding-1.0.1/DiagrammeR.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 
 
@@ -192,7 +200,7 @@ t_mean &lt;-<span class="st"> </span><span class="kw">round</span>(<span class="
 <span class="st">   </span><span class="kw">kable_styling</span>(<span class="dt">bootstrap_options =</span> <span class="kw">c</span>(<span class="st">&quot;striped&quot;</span>, <span class="st">&quot;responsive&quot;</span>))</code></pre>
 <table class="table table-striped table-responsive" style="margin-left: auto; margin-right: auto;">
 <caption>
-<span id="tab:unnamed-chunk-14">Table 1: </span> Some caption’.
+<span id="tab:unnamed-chunk-15">Table 1: </span> Some caption’.
 </caption>
 <thead>
 <tr>
@@ -285,7 +293,7 @@ Petal.Width
 </table>
 
 <p>For .pdf files you want to set format = ‘latex’, where these tables look even better.
-The options of <code>kableExtra</code> are limitless and with the pipe operator ‘%&gt;%’ you can just keep on adding more specifications which can be found at <a href="https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html">kableExtra</a>.</p>
+The options of <code>kableExtra</code> are limitless and with the pipe operator ‘%&gt;%’ which comes with <code>dplyr</code> you can just keep on adding more specifications which can be found at <a href="https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html">kableExtra</a>.</p>
 </div>
 <div id="Pander" class="section level2 unnumbered">
 <h2>Pander</h2>

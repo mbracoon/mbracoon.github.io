@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>References | Why I wrote my Thesis in R Markdown</title>
+  <title>Managing Citations | Why I wrote my Thesis in R Markdown</title>
   <meta name="description" content="This is a short post about why R Markdown rules" />
   <meta name="generator" content="bookdown 0.11 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="References | Why I wrote my Thesis in R Markdown" />
+  <meta property="og:title" content="Managing Citations | Why I wrote my Thesis in R Markdown" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="References | Why I wrote my Thesis in R Markdown" />
+  <meta name="twitter:title" content="Managing Citations | Why I wrote my Thesis in R Markdown" />
   
   <meta name="twitter:description" content="This is a short post about why R Markdown rules" />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="ManagingCitations.html">
-
+<link rel="prev" href="TheYAMLHeader.html">
+<link rel="next" href="References.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -170,16 +170,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="References" class="section level1 unnumbered">
-<h1>References</h1>
-
+<div id="ManagingCitations" class="section level1 unnumbered">
+<h1>Managing Citations</h1>
+<p>Instead of manually inserting citations, you can use a bibtex library. For me it was the first time using bibtex and in the end I think it was really worth wile. The idea is to store your references in a different file with a specific format, such that R Markdown (Pandoc to be more specific) can access it and automatically insert it in the references. In the .Rmd file you wont find any direct citations like <span class="citation">(Hastie, Tibshirani, and Friedman <a href="#ref-Hastie09">2009</a>)</span>, just the command <code>[@Hastie09]</code>.
+This specific reference could be stored in your bibtex file like this:</p>
+<p><code>@book</code>{Hastie09,</p>
+<pre><code> author = &quot;Hastie, Trevor and Tibshirani, Robert and Friedman, Jerome&quot;,
+  
+        title = &quot;The {E}lements of {S}tatistical {L}earning&quot;,
+        
+        subtitle = &quot;Data {M}ining, {I}nference, and {P}rediction&quot;,
+        
+        publisher = &quot;Springer Science+Business Media&quot;,
+        
+        year = &quot;2009&quot;</code></pre>
+<p>}</p>
+<p>The reference is then automatically put in the references section at the end of the thesis. However, what the citations look like in the text and in the references is not dependent on the bibtex file.
+Besides your bibtex file, you also need to include a citation style language (csl) file in the YAML header. I downloaded the 6th edition apa csl from github, which you can find <a href="https://github.com/citation-style-language/styles/blob/master/apa.csl">here</a>.</p>
+<p>This particular .csl will only capitalize the first word of every sentence in articles and books, however I had the requirement to capitalize every noun it the title of books, so I used curly brackets for the first letters.</p>
+<p>The websites from which you download papers normally already provide bibtex files which you can also download and insert in your bibtex file.</p>
+</div>
+<h3>References</h3>
 <div id="refs" class="references">
-<div>
+<div id="ref-Hastie09">
 <p>Hastie, Trevor, Robert Tibshirani, and Jerome Friedman. 2009. <em>The Elements of Statistical Learning: Data Mining, Inference, and Prediction</em>. Springer Science+Business Media.</p>
-</div>
-<div>
-<p>Xie, Yihui, J.J. Allaire, and Garrett Grolemund. 2018. <em>R Markdown: The Definitive Guide.</em> Boca Raton, Florida: Chapman; Hall/CRC. <a href="https://bookdown.org/yihui/rmarkdown">https://bookdown.org/yihui/rmarkdown</a>.</p>
-</div>
 </div>
 </div>
             </section>
@@ -187,8 +201,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="ManagingCitations.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="TheYAMLHeader.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="References.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

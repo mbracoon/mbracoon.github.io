@@ -148,6 +148,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="Tables.html"><a href="Tables.html#Pander"><i class="fa fa-check"></i>Pander</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="TheYAMLHeader.html"><a href="TheYAMLHeader.html"><i class="fa fa-check"></i>The YAML Header</a></li>
+<li class="chapter" data-level="" data-path="ManagingCitations.html"><a href="ManagingCitations.html"><i class="fa fa-check"></i>Managing Citations</a></li>
 <li class="chapter" data-level="" data-path="References.html"><a href="References.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -172,14 +173,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="Workflow" class="section level1 unnumbered">
 <h1>Workflow</h1>
 <p>There are different approaches of working with R Markdown. Before you start writing your thesis, it is important that you decide on how much code you want to include in the .Rmd file.</p>
-<p>You can code <strong>everything</strong> in the R Markdown file, but I found that this may not be the best idea. As much as I like to keep things in one place, I would recommend you to do the ‘hard’ part of coding in a normal R file, and just include light code in the R Markdown file. The reason is twofold. First, there is not much to be gained to do your data preparation in R Markdown, if you are not explicitly using it in your text. It will just extend the rendering time in the end. Secondly, I think the file gets really confusing, the bigger it gets.</p>
+<p>You can code <strong>everything</strong> in the R Markdown file, but I found that this may not be the best idea. As much as I like to keep things in one place, I would recommend you to do the ‘hard’ part of coding in a normal R file, and just include light code in the R Markdown file. The reason is twofold. First, there is not much to be gained to do your data preparation in R Markdown, if you are not explicitly using it in your text. It will just extend the rendering time in the end. Secondly, I think the file gets more confusing, the bigger it gets.</p>
 <p>I worked with three files in total:</p>
 <ul>
 <li><p>The first file (1) was a normal R file for preparing the data set, where I checked the structure of the data and changed the format of variables. All my screens that I had to take in order of the random forest model to work took place here. In the end I saved this final data frame as a feather file, which is described below.</p></li>
 <li><p>The second file (2), also a R file, was used for the model estimation and validation. I imported the feather data frame from (1) and ran the models. Every model and its validation were saved as an RDS file, also described below.</p></li>
-<li><p>The third and final file was the R Markdown .Rmd file (3). Here I wrote all my text and imported the files which were saved in (1) and (2). The first chapter of my thesis was an overview over the data set, therefore I first imported the prepared file from (1) and did some summary statistics with kable described in Chapter Tables. Furthermore I did some boxplots of important variables descibed in Chapter Figures. For my results I imported the files from (2) and then plotted the residuals and other results directly in code chunks.</p></li>
+<li><p>The third and final file was the R Markdown .Rmd file (3). Here I wrote all my text and imported the files which were saved in (1) and (2). The first chapter of my thesis was an overview over the data set, therefore I first imported the prepared file from (1) and did some summary statistics with kable described in Chapter Tables. Furthermore I did some boxplots of important variables described in Chapter Figures. For my results I imported the files from (2) and then plotted the residuals and other results directly in code chunks.</p></li>
 </ul>
-<p>[Maybe insert flowchart]</p>
+<p>[Insert flowchart]</p>
 <div id="Feather" class="section level2 unnumbered">
 <h2>Feather</h2>
 <p>Installing the feather package can save you loads of time when dealing with big data sets. Instead of always reading in your data with read.csv or read.xls you just use read feather, which is so much faster. After the first time your data is in the global environment you should use:</p>
@@ -200,7 +201,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="Experiments" class="section level2 unnumbered">
 <h2>Experiments</h2>
-<p>As your R Markdown file gets bigger, the rendering time also extends. For your last format changes, it is probably helpfull if you generate a different .Rmd file with which you can experiment. Especially for things like tables, your cover or the ‘Einverständniserklärung’ you do not want to render the whole document. For all my <span class="math inline">\(\LaTeX\)</span> stuff and tables I experimented in a different file.</p>
+<p>As your R Markdown file gets bigger, the rendering time also extends. For your last format changes, it is probably helpful if you generate a different .Rmd file with which you can experiment. Especially for things like tables, your cover or the ‘Einverständniserklärung’ you do not want to render the whole document. For all my <span class="math inline">\(\LaTeX\)</span> stuff and tables I experimented in a different file.</p>
 
 </div>
 </div>

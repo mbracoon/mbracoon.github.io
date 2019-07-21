@@ -142,7 +142,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="GetStarted.html"><a href="GetStarted.html"><i class="fa fa-check"></i>Get Started</a></li>
 <li class="chapter" data-level="" data-path="Workflow.html"><a href="Workflow.html"><i class="fa fa-check"></i>Workflow</a><ul>
 <li class="chapter" data-level="" data-path="Workflow.html"><a href="Workflow.html#Feather"><i class="fa fa-check"></i>Feather</a></li>
-<li class="chapter" data-level="" data-path="Workflow.html"><a href="Workflow.html#RDA"><i class="fa fa-check"></i>RDS</a></li>
+<li class="chapter" data-level="" data-path="Workflow.html"><a href="Workflow.html#RDS"><i class="fa fa-check"></i>RDS</a></li>
 <li class="chapter" data-level="" data-path="Workflow.html"><a href="Workflow.html#Experiments"><i class="fa fa-check"></i>Experiments</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="Markdown.html"><a href="Markdown.html"><i class="fa fa-check"></i>Markdown</a></li>
@@ -183,7 +183,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Tables are used to present a large amount of data in a small form factor. Especially for summary statistics and variable descriptions they are usefull. There are different ways of making tables in R Markdown and I want to present you two.</p>
 <div id="Kable" class="section level2 unnumbered">
 <h2>Kable</h2>
-<p>The first involves the R package <code>kableExtra</code> and the function <strong>kable</strong> from <code>knitr</code>. With kable, you can create beautiful tables for summary statistics. The idea is to create a data frame which kable then can transform into a table. After creating the data frame with all the variables for which summary statistics are required, you can use <strong>lapply</strong> to return the desired statistics.</p>
+<p>The first involves the R package <code>kableExtra</code> and the function <strong>kable</strong> from <code>knitr</code>. With kable, you can create beautiful tables for summary statistics. The idea is to create a data frame which kable then transforms into a table. After creating the data frame with all the variables for which summary statistics are required, you can use <strong>lapply</strong> to return the desired statistics.</p>
 <pre class="sourceCode r"><code class="sourceCode r">t_mean &lt;-<span class="st"> </span><span class="kw">lapply</span>(data, mean, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)
 t_med &lt;-<span class="st"> </span><span class="kw">lapply</span>(data, median, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)
 t_min &lt;-<span class="st"> </span><span class="kw">lapply</span>(data, min, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)
@@ -293,7 +293,7 @@ Petal.Width
 </table>
 
 <p>For .pdf files you want to set format = ‘latex’, where these tables look even better.
-The options of <code>kableExtra</code> are limitless and with the pipe operator ‘%&gt;%’ which comes with <code>dplyr</code> you can just keep on adding more specifications which can be found at <a href="https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html">kableExtra</a>.</p>
+The options of <code>kableExtra</code> are limitless and with the pipe operator <code>%&gt;%</code> which comes with <code>dplyr</code> you can just keep on adding more specifications which can be found at <a href="https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html">kableExtra</a>.</p>
 </div>
 <div id="Pander" class="section level2 unnumbered">
 <h2>Pander</h2>

@@ -24,7 +24,7 @@
 <meta name="author" content="Michael Briehl" />
 
 
-<meta name="date" content="2019-07-21" />
+<meta name="date" content="2019-07-23" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -184,7 +184,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2>Inline Code</h2>
 <p>Implementing R Code in the Text is especially neat to be consistent. Maybe your data set changes and you want to implement the new summary in your file? With Word or <span class="math inline">\(\LaTeX\)</span> you would have to search for the numbers that changed manually, which is really prone to mistakes. In R Markdown there is non of that. You just insert your R code directly in your text like that:</p>
 <p><img src="Tutorial_3.png" /></p>
-<p>If your model changes, the number automatically changes</p>
+<p>A typical sentence in my results section contained exactly that:</p>
+<ul>
+<li><code>The final model has a test set MSE of r round(final_forest$MSE, digits = 2), ...</code></li>
+<li>The final model has a test set MSE of 2.51, …</li>
+</ul>
+<p>or</p>
+<ul>
+<li><code>In total there were r format(nrow(your_data), big.mark =",") observations, ...</code></li>
+<li>In total there were 42,378 observations, …</li>
+</ul>
 </div>
 <div id="CodeChunks" class="section level2 unnumbered">
 <h2>Code Chunks</h2>

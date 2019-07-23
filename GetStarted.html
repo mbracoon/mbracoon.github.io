@@ -24,7 +24,7 @@
 <meta name="author" content="Michael Briehl" />
 
 
-<meta name="date" content="2019-07-21" />
+<meta name="date" content="2019-07-23" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -142,7 +142,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="GetStarted.html"><a href="GetStarted.html"><i class="fa fa-check"></i>Get Started</a></li>
 <li class="chapter" data-level="" data-path="Workflow.html"><a href="Workflow.html"><i class="fa fa-check"></i>Workflow</a><ul>
 <li class="chapter" data-level="" data-path="Workflow.html"><a href="Workflow.html#Feather"><i class="fa fa-check"></i>Feather</a></li>
-<li class="chapter" data-level="" data-path="Workflow.html"><a href="Workflow.html#RDA"><i class="fa fa-check"></i>RDS</a></li>
+<li class="chapter" data-level="" data-path="Workflow.html"><a href="Workflow.html#RDS"><i class="fa fa-check"></i>RDS</a></li>
 <li class="chapter" data-level="" data-path="Workflow.html"><a href="Workflow.html#Experiments"><i class="fa fa-check"></i>Experiments</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="Markdown.html"><a href="Markdown.html"><i class="fa fa-check"></i>Markdown</a></li>
@@ -180,12 +180,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="GetStarted" class="section level1 unnumbered">
 <h1>Get Started</h1>
+<p>My environment for R Markdown was R Studio on Windows 10. The topics discussed in this tutorial should be the same for Linux and Mac, the only difference may be the path structure of the working directory.</p>
 <p>Before you can produce your first R Markdown file, you want to install the R Markdown package:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="st">&quot;rmarkdown&quot;</span>)</code></pre>
 <p>Now you can go on File -&gt; New File -&gt; R Markdown to create your first file.</p>
 <p><img src="Tutorial_1.png" /></p>
-<p>Every file starts with a example text, which you can already render into a .html document. But your thesis is probably required to be in the .pdf format, therefore you need to install a <span class="math inline">\(\LaTeX\)</span> distribution. If you are on a Windows machine, I would recommend you MiKTeX, for Mac or Linux you can use TeX Live or MacTex. Keep in mind, you do not have to be familiar with <span class="math inline">\(\LaTeX\)</span>, it is just needed for the conversion into .pdf.
-What you also want to do, is to change the settings of your <span class="math inline">\(\LaTeX\)</span> distribution, such that packages which you may need in the R Markdown file are automatically downloaded. For MiKTeX you just go to ‘Settings’ and check the box ‘Always install missing packages on-the-fly’</p>
+<p>Every file starts with a example text, which you can already render into a .html document. But your thesis is probably required to be in the .pdf format, therefore you need to install a <span class="math inline">\(\LaTeX\)</span> distribution. If you are on a Windows machine, I would recommend MiKTeX, for Linux or Mac you can use TeX Live or MacTex. Keep in mind, you do not have to be familiar with <span class="math inline">\(\LaTeX\)</span>, it is just needed for the conversion into <code>.pdf</code>.</p>
+<p>What you also want to do, is to change the settings of your <span class="math inline">\(\LaTeX\)</span> distribution, such that packages which you may need in the R Markdown file are automatically downloaded. For MiKTeX you just go to ‘Settings’ and check the box ‘Always install missing packages on-the-fly’</p>
 <p>For rendering your file you just have to press the <strong>Knit</strong> button and voilà, there is your first document.</p>
 
 </div>

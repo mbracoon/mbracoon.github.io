@@ -24,7 +24,7 @@
 <meta name="author" content="Michael Briehl" />
 
 
-<meta name="date" content="2019-07-21" />
+<meta name="date" content="2019-07-23" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -195,12 +195,12 @@ t_mean &lt;-<span class="st"> </span><span class="kw">round</span>(<span class="
 <pre class="sourceCode r"><code class="sourceCode r">table &lt;-<span class="st"> </span><span class="kw">cbind</span>(<span class="dt">Mean =</span> t_mean, <span class="dt">Median =</span> t_med, <span class="dt">Min =</span> t_min, <span class="dt">Max =</span> t_max)</code></pre>
 <p>Which then can be used for kable:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(kableExtra)
-<span class="kw">kable</span>(table, <span class="dt">format =</span> <span class="st">&quot;html&quot;</span>, <span class="dt">caption =</span> <span class="st">&quot;</span><span class="ch">\\</span><span class="st">label{table1} Some caption&#39;.&quot;</span>, <span class="co"># Or format = &quot;latex&quot; </span>
+<span class="kw">kable</span>(table, <span class="dt">format =</span> <span class="st">&quot;html&quot;</span>, <span class="dt">caption =</span> <span class="st">&quot;</span><span class="ch">\\</span><span class="st">label{table1} Some caption.&quot;</span>, <span class="co"># Or format = &quot;latex&quot; </span>
       <span class="dt">booktab =</span> <span class="ot">TRUE</span>) <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">   </span><span class="kw">kable_styling</span>(<span class="dt">bootstrap_options =</span> <span class="kw">c</span>(<span class="st">&quot;striped&quot;</span>, <span class="st">&quot;responsive&quot;</span>))</code></pre>
 <table class="table table-striped table-responsive" style="margin-left: auto; margin-right: auto;">
 <caption>
-<span id="tab:unnamed-chunk-15">Table 1: </span> Some caption’.
+<span id="tab:unnamed-chunk-16">Table 1: </span> Some caption.
 </caption>
 <thead>
 <tr>
@@ -292,7 +292,7 @@ Petal.Width
 </tbody>
 </table>
 
-<p>For .pdf files you want to set <code>format = "latex"</code>, where these tables look even better.
+<p>This is a <code>.html</code> file, for your <code>.pdf</code> output you want to set the <code>format = "latex"</code>, therefore R Markdown transforms the input of kable in a table which looks really good.
 The options of <code>kableExtra</code> are limitless and with the pipe operator <code>%&gt;%</code> which comes with <code>dplyr</code> you can just keep on adding more specifications which can be found at <a href="https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html">kableExtra</a>.</p>
 </div>
 <div id="Pander" class="section level2 unnumbered">
